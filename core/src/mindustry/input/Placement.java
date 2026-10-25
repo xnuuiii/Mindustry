@@ -197,7 +197,7 @@ public class Placement{
         if(isSidePlace(plans) || plans.size == 0) return;
 
         //check for orthogonal placement + unlocked state
-        if(!(plans.first().x == plans.peek().x || plans.first().y == plans.peek().y) || !bridge.unlockedNow()) {
+        if(!(plans.first().x == plans.peek().x || plans.first().y == plans.peek().y) || !bridge.unlockedNow()){
             return;
         }
         //check for pbridge + unlocked state
@@ -288,7 +288,6 @@ public class Placement{
                 dp[N + i] = bridgeCost;
                 finished = false;
             }
-            
         }
             if(!finished && !forceMake) return false;
 
