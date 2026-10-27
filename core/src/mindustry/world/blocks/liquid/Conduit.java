@@ -129,7 +129,7 @@ public class Conduit extends LiquidBlock implements Autotiler{
             req.tile() != null &&
             (req.tile().block() instanceof LiquidJunction ||
             req.tile().block() instanceof Conduit &&
-            Mathf.mod(req.build().rotation - req.rotation, 2) == 1) ? junctionReplacement : this;
+            Mathf.mod(req.build().rotation - req.rotation, 2) == 1) ? (req.tile().block() instanceof LiquidJunction ? req.tile().block() : junctionReplacement) : this;
     }
 
     @Override
